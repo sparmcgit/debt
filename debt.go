@@ -1,6 +1,6 @@
 /*
 	Copyright 2017 Martin Häggström <hejpadej@spray.se>.
-    All rights reserved. Use of this source code is governed by a
+	All rights reserved. Use of this source code is governed by a
 	BSD two clause license that can be found in the LICENSE file.
 */
 
