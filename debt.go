@@ -1,21 +1,37 @@
-/*
-	Package debt describes a debt.
-	Martin Häggström 170722
-*/
+// Package debt describes a debt.
+// Martin Häggström 170722
 package debt
 
 // Debt : type
 // debtName : name of the debt.
 // debtSize : size of the debt.
-// payPerMont : how much to pay per month.
+// amortization : how much to amortizise.
 // currency : currency.
-// quantityOfMonths : quantity of months it takes to pay the debt.
+// quantityOfPayments : quantity of payments to pay the debt.
 type Debt struct {
-	debtName         string
-	debtSize      int
-	payPerMonth    int
-	currency            string
-	interest	float32
-	amortization int
-	quantityOfMonths int
+	debtName           string
+	debtSize           int
+	currency           string
+	interest           float32
+	amortization       int
+	quantityOfPayments int
+}
+
+// InitDebt : returns a debt type.
+func InitDebt(debtname, currency string, debtSize, payment int, interest float32) Debt {
+
+	debt := Debt{}
+	debt.debtName = debtname
+	debt.debtSize = debtSize
+	debt.amortization = payment
+	debt.currency = currency
+	debt.interest = interest
+	debt.quantityOfPayments = initQuantityOfPayments(debtSize, payment)
+
+	return debt
+}
+
+func initQuantityOfPayments(debtSize, amortization int) int {
+	quantity := debtSize / amortization
+	return quantity
 }
