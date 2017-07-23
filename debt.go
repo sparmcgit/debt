@@ -23,8 +23,8 @@ type Debt struct {
 	quantityOfPayments int
 }
 
-// InitDebt : returns a debt type.
-func InitDebt(debtname, currency string, debtSize, payment int, interest float32) Debt {
+// NewDebt : returns a debt type.
+func NewDebt(debtname, currency string, debtSize, payment int, interest float32) Debt {
 
 	debt := Debt{}
 	debt.debtName = debtname
