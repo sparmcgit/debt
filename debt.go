@@ -15,24 +15,24 @@ package debt
 // currency : currency.
 // quantityOfPayments : quantity of payments to pay the debt.
 type Debt struct {
-	debtName           string
-	debtSize           int
-	currency           string
-	interest           float32
-	amortization       int
-	quantityOfPayments int
+	DebtName           string
+	DebtSize           int
+	Currency           string
+	Interest           float32
+	Amortization       int
+	QuantityOfPayments int
 }
 
 // NewDebt : returns a debt type.
 func NewDebt(debtname, currency string, debtSize, payment int, interest float32) Debt {
 
 	debt := Debt{}
-	debt.debtName = debtname
-	debt.debtSize = debtSize
-	debt.amortization = payment
-	debt.currency = currency
-	debt.interest = interest
-	debt.quantityOfPayments = initQuantityOfPayments(debtSize, payment)
+	debt.DebtName = debtname
+	debt.DebtSize = debtSize
+	debt.Amortization = payment
+	debt.Currency = currency
+	debt.Interest = interest
+	debt.QuantityOfPayments = initQuantityOfPayments(debtSize, payment)
 
 	return debt
 }
